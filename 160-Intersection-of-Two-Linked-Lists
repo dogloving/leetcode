@@ -26,14 +26,14 @@ Your code should preferably run in O(n) time and use only O(1) memory.
 public:
     ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
         if(!headA || !headB)return NULL;
-        ListNode* pa=headA;
-        ListNode* pb=headB;
-        while(pa && pb && pa!=pb){
-            pa=pa->next;
-            pb=pb->next;
-            if(pa==pb)return pa;
-            if(pa==NULL)pa=headB;
-            if(pb==NULL)pb=headA;
+        ListNode* pa = headA;
+        ListNode* pb = headB;
+        while(pa && pb && pa != pb){
+            pa=pa -> next;
+            pb=pb -> next;
+            if(pa == pb)return pa;
+            if(pa == NULL)pa = headB;
+            if(pb == NULL)pb = headA;
         }
         return pa;
     }
