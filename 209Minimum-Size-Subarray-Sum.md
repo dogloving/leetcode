@@ -1,4 +1,4 @@
-# Problem Describe:
+﻿# Problem Describe:
 <pre>
 	Given an array of n positive integers and a positive integer s, find the minimal length of a subarray of which the sum ≥ s. If there isn't one, return 0 instead.
 
@@ -13,8 +13,8 @@
 # My Code:
 <pre>
 	class Solution {
-public:
-    int minSubArrayLen(int s, vector<int>& nums) {
+	public:
+    int minSubArrayLen(int s, vector< int>& nums) {
         if(nums.size()==0)
             return 0;
         int start=0,end=0;
@@ -23,18 +23,18 @@ public:
         int sum=nums[0];
         while(end!=nums.size()){
             if(sum>=s){
-            	minLength=minLength<min?minLength:min;
+            	minLength=minLength< min?minLength:min;
                 sum-=nums[start];
                 start++;
                 min=end-start+1;
             }
-            else if(sum<s){
+            else if(sum< s){
                 end++;
                 sum+=nums[end];
                 min=end-start+1;
             }
         }
-        if(end-start==nums.size() && sum<s)
+        if(end-start==nums.size() && sum< s)
             return 0;
         return minLength;
     }

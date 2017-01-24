@@ -1,4 +1,4 @@
-# Problem Describe:
+﻿# Problem Describe:
 <pre>
 	Given a linked list, return the node where the cycle begins. If there is no cycle, return null.
 
@@ -41,4 +41,4 @@ public:
 </pre>
 # 思路：
 这题在于理解题意：并不一定是整条链表形成一个环，也可能是一个环带个小尾巴。知道了这点就豁然开朗了，解法基本同上题。
-<img src="http://upload-images.jianshu.io/upload_images/63582-75db204717c0bc5a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">
+
