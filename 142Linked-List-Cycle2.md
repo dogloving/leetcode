@@ -3,7 +3,7 @@
 	Given a linked list, return the node where the cycle begins. If there is no cycle, return null.
 
 	Note: Do not modify the linked list.
-
+	
 	Follow up:
 	Can you solve it without using extra space?
 </pre>
@@ -41,4 +41,34 @@ public:
 </pre>
 # 思路：
 这题在于理解题意：并不一定是整条链表形成一个环，也可能是一个环带个小尾巴。知道了这点就豁然开朗了，解法基本同上题。
+
+```javascript
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+
+/**
+ * @param {ListNode} head
+ * @return {ListNode}
+ */
+var detectCycle = function(head) {
+    let fast = head, slow = head
+    while (fast&&slow&&fast.next) {
+        fast = fast.next.next
+        slow = slow.next
+        if (fast==slow) {
+            while (slow!=head) {
+                slow = slow.next
+                head = head.next
+            }
+            return head
+        }
+    }
+    return null
+};
+```
 
